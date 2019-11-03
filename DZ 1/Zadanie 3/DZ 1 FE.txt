@@ -1,0 +1,14 @@
+var arr=[];
+for (var c=0;c<10;c++){
+  var random = Math.round (Math.random()*60);
+  arr.push(random);
+}
+console.log(arr);
+var menshe = [];
+var bolshe = [];
+for (key of arr){
+  if(key<50){
+    menshe.push(key);
+  }else{bolshe.push(key);}
+}
+console.log(bolshe);
