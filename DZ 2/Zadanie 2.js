@@ -5,4 +5,4 @@ function proverka (vhod){
     }else{ return 'Ne vernyi tip dannyh'}
 };
 var exit = proverka(vhod);
-alert(exit);
+console.log(exit);
