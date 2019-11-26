@@ -55,15 +55,15 @@ function charE(last_name){
      return last_name[0]===E ?
     arr.push(last_name):null
 }
-const result = users.filter(function(obj) {
+var result = users.filter(function(obj) {
          return charE(obj.first_name);
      });
-const result1 = users.filter(function(obj) {
+var result1 = users.filter(function(obj) {
   return charE(obj.last_name);
 console.log(arr);
 
-// Задача Отобразить пользователей которым более 30 лет 
-let minAge = 30;
+// Задача Отобразить пользователей которым более 30 лет и отсортировать от старых до молодых
+var minAge = 30;
 
     function getAge(birthday) { // birthday is a date
         let ageDifMs = Date.now() - new Date(birthday);
@@ -71,11 +71,14 @@ let minAge = 30;
         return Math.abs(ageDate.getUTCFullYear() - 1970);
     }
 
-    const result = users.filter(function(obj) {
-        return getAge(obj.birthday) > minAge;
-    });
+var result = users.filter(function(obj) {
+        return getAge(obj.birthday) > minAge })
+var resultA = result.sort(function(a,b){
+        return getAge(b.birthday) - getAge(a.birthday)
 
-    console.log(result);
+    });
+console.log(resultA);
+
 
     // Задание сделать первые буквы заглавными
     function ucFirst(str) {
@@ -90,7 +93,7 @@ let minAge = 30;
      
      console.log(bigChar);
      
-  // Задача 1, котрая была в субботу
+  // Задача 1, котрая была в субботу(Тут запутался сильно)
 
   function newUsers(){
     var how = parseInt(prompt('Vvedite skolko polzovateley: '));
