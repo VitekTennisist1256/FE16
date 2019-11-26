@@ -48,18 +48,19 @@ var esd = [];
   }
 ];
 // Задача "Вывести пользователей у которых имя или фамилия начинается на букву E"
-function ucFirst(str) {
-    return str.charAt(0).toLocaleUpperCase() + str.slice(1);
-  }
- 
- var bigChar = users.map(function(obj) {
-     obj.first_name = ucFirst(obj.first_name);
-     obj.last_name = ucFirst(obj.last_name);
-     return obj;
- });
- 
- console.log(bigChar);
- 
+let E = 'E';
+var arr = [];
+function charE(last_name){
+     last_name.split('');
+     return last_name[0]===E ?
+    arr.push(last_name):null
+}
+const result = users.filter(function(obj) {
+         return charE(obj.first_name);
+     });
+const result1 = users.filter(function(obj) {
+  return charE(obj.last_name);
+console.log(arr);
 
 // Задача Отобразить пользователей которым более 30 лет 
 let minAge = 30;
@@ -77,16 +78,18 @@ let minAge = 30;
     console.log(result);
 
     // Задание сделать первые буквы заглавными
-    var err = [];
-    function ucFirst(s) {
-          return s.charAt(0).toUpperCase() + s.substring(1).toLowerCase();
-          err.push(s);
-        }
-        const bigChar = users.filter(function(obj){
-            return ucFirst(obj.first_name)
-        })
-  console.log(err);
-
+    function ucFirst(str) {
+        return str.charAt(0).toLocaleUpperCase() + str.slice(1);
+      }
+     
+     const bigChar = users.map(function(obj) {
+         obj.first_name = ucFirst(obj.first_name);
+         obj.last_name = ucFirst(obj.last_name);
+         return obj;
+     });
+     
+     console.log(bigChar);
+     
   // Задача 1, котрая была в субботу
 
   function newUsers(){
